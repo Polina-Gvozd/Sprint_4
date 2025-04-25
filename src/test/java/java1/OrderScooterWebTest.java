@@ -6,7 +6,6 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 @RunWith(Parameterized.class)
@@ -46,17 +45,17 @@ public class OrderScooterWebTest {
         mainPage.openMainPage();
         mainPage.clickOrderButton1();
         orderPage.clickOnCookieButton();
-        driver.findElement(By.cssSelector(".Input_Input__1iN_Z[placeholder='* Имя']")).sendKeys(name);
-        driver.findElement(By.cssSelector(".Input_Input__1iN_Z[placeholder='* Фамилия']")).sendKeys(lastname);
-        driver.findElement(By.cssSelector(".Input_Input__1iN_Z[placeholder='* Адрес: куда привезти заказ']")).sendKeys(address);
+        driver.findElement(orderPage.nameField).sendKeys(name);
+        driver.findElement(orderPage.lastNameField).sendKeys(lastname);
+        driver.findElement(orderPage.addressField).sendKeys(address);
         orderPage.chooseStation();
-        driver.findElement(By.cssSelector(".Input_Input__1iN_Z[placeholder='* Телефон: на него позвонит курьер']")).sendKeys(phone);
+        driver.findElement(orderPage.phoneField).sendKeys(phone);
         orderPage.clickOnNext();
-        driver.findElement(By.cssSelector(".Input_Input__1iN_Z[placeholder='* Когда привезти самокат']")).sendKeys(data);
+        driver.findElement(orderPage.dataField).sendKeys(data);
         orderPage.chooseTheData();
         orderPage.chooseDaysQuantity();
         orderPage.chooseScooterColor();
-        driver.findElement(By.cssSelector(".Input_Input__1iN_Z[placeholder='Комментарий для курьера']")).sendKeys(comment);
+        driver.findElement(orderPage.commentField).sendKeys(comment);
         orderPage.clickOnOrderButton();
         orderPage.clickOnYes();
         orderPage.checkOrder();

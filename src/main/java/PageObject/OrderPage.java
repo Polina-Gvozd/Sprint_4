@@ -11,6 +11,13 @@ import java.time.Duration;
 public class OrderPage {
     private final WebDriver driver;
 
+    public By nameField = By.cssSelector(".Input_Input__1iN_Z[placeholder='* Имя']");//поле ввода имени
+    public By lastNameField = By.cssSelector(".Input_Input__1iN_Z[placeholder='* Фамилия']");// поле ввода фамилии
+    public By addressField = By.cssSelector(".Input_Input__1iN_Z[placeholder='* Адрес: куда привезти заказ']");// поле ввода адреса
+    public By phoneField = By.cssSelector(".Input_Input__1iN_Z[placeholder='* Телефон: на него позвонит курьер']");//поле ввода телефона
+    public By dataField = By.cssSelector(".Input_Input__1iN_Z[placeholder='* Когда привезти самокат']");//поле ввода даты
+    public By commentField = By.cssSelector(".Input_Input__1iN_Z[placeholder='Комментарий для курьера']");//поле ввода комментария
+
     private final By cookieButton = By.className("App_CookieButton__3cvqF");//кнопка принятия куки
     private final By metroField = By.className("select-search__input");//поле станции метро
     private final By metroStation = By.cssSelector(".select-search__row[data-value='1']");//всплывающий список станций
